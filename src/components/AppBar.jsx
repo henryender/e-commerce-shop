@@ -12,7 +12,7 @@ function AppBar() {
     <>
       <div className="navbar-container">
       <p className="logo">
-        <Link href="/">Zara Phone Shop</Link>
+        <Link href="/">Zara Headphones</Link>
       </p>
 
       <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
