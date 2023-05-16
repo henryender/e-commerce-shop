@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React ,{useEffect} from 'react'
+import ProductPage from './components/ProductPage'
+import Home from './components/Home'
+import { Route, Routes, } from 'react-router-dom'
+import Success from './pages/success'
+import { StateContext } from './context/StateContext'
+
+
+const App = () => {
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <StateContext>
+        <div>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='productpage/:id'
+              element={<ProductPage />} />
+              <Route path='/success' element={<Success/>}/>
+          </Routes>
 
-export default App;
+        </div>
+      </StateContext>
+
+
+    </>
+  )
+}
+export default App
+
+
+
+
+
